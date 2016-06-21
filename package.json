@@ -1,0 +1,53 @@
+{
+  "name": "beanstalk-code-snippet-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Slack Bot that displays the contents of a file from your Beanstalk repository.",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.9.1",
+    "beepboop-botkit": "^1.3.0",
+    "body-parser": "^1.15.0",
+    "botkit": "0.0.15",
+    "easy-crc32": "0.0.2",
+    "express": "^4.13.4",
+    "lodash": "^4.11.1",
+    "morgan": "^1.7.0",
+    "node-persist": "0.0.11"
+  },
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "eslint-config-wildbit": "^2.0.1",
+    "expect": "^1.16.0",
+    "lint-staged": "^0.2.1",
+    "mocha": "^2.4.5",
+    "ngrok": "^2.1.8",
+    "pre-commit": "^1.1.2"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha ./test/*.js",
+    "proxy": "ngrok http -subdomain bscodebot 3000",
+    "test:watch": "npm test -- --watch",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "eslint-staged": "eslint-staged"
+  },
+  "pre-commit": [
+    "eslint-staged"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wildbit/beanstalk-code-snippet-bot.git"
+  },
+  "keywords": [],
+  "authors": [
+    "Andrey Okonetchnikov <andrey@okonet.ru>",
+    "Derek Rushforth <d@derekrushforth.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wildbit/beanstalk-code-snippet-bot/issues"
+  },
+  "homepage": "https://github.com/wildbit/beanstalk-code-snippet-bot#readme"
+}
